@@ -1,0 +1,556 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif !important;
+  background-color: #134f9f;
+  overflow: hidden;
+}
+
+.AppContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.App {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+.AppHeader {
+  width: 100%;
+  background-color: #fff !important;
+  font-family: Arial, sans-serif !important;
+  padding: 0;
+}
+.AppHeader nav.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.AppHeader > nav {
+  width: 100%;
+  font-size: 18px;
+}
+.AppHeader > nav .navbar-nav li a {
+  color: #134f9f !important;
+  margin-right: 22px;
+}
+.AppHeader > nav .navbar-nav li a:first-child {
+  margin-left: 22px;
+}
+.AppHeader > nav .navbar-nav li a:last-child {
+  margin-right: 0;
+}
+.AppHeader > nav .navbar-nav li a:hover {
+  color: #134f9f !important;
+}
+
+.AppHeader > nav .navbar-nav li a:hover span {
+  border-bottom: 2px solid #134f9f !important;
+}
+
+.AppHeader > nav .navbar-nav li.active a {
+  color: #09264d !important;
+}
+.AppHeader > nav .navbar-nav li.active a span {
+  padding-bottom: 3px;
+}
+.AppHeader > nav .nav-item {
+  display: flex;
+  vertical-align: middle;
+}
+.AppHeader > nav a.navbar-brand {
+  padding-top: 0;
+  margin-right: 0px;
+  padding-left: 28px;
+}
+
+
+.AppSections > nav {
+  background-color: #bfd0e4 !important;
+  color: #134f9f !important;
+}
+.AppSections > nav .navbar-nav li a {
+  color: #134f9f !important;
+  margin-right: 20px;
+}
+.AppSections > nav .navbar-nav li a:hover {
+  color: #404040 !important;
+  text-decoration:underline;
+}
+.AppSections > nav .navbar-nav li.active a {
+  color: #000 !important;
+}
+
+
+.sec-navbar-title {
+  font-size: 16px;
+  color: #134f9f;
+}
+
+.navbar-light .navbar-toggler {
+  border: transparent !important;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='rgb(19, 79, 159)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
+}
+
+#copyID {
+  font-size: 10px !important;
+}
+
+button.paneButton {
+  background-color: transparent;
+  color: rgb(39, 216, 195);
+  font-weight: bold;
+  border-radius: 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+button.paneButton:hover {
+  background-color: rgb(39, 216, 195);
+  color: #333;
+}
+
+.AppContent {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 50px;
+  scroll-behavior: smooth;
+  overflow: auto;
+}
+
+.AppContentPane {
+  position: relative;
+  border-top: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.AppDiagram {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.AppContentIntroPane {
+  position: absolute;
+  width: 490px;
+  height: 535px;
+  margin-left: 44px;
+  margin-top: 20px;
+  padding-right: 40px;
+  color: #efefef;
+  z-index: 2;
+  overflow: hidden;
+}
+.AppContentIntroPane .toggleIntro {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  z-index: 30;
+}
+
+.AppContentIntro .title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  line-height:2rem;
+  padding-bottom: .75rem;
+}
+
+.AppContentIntro .subtitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height:1.75rem;
+  padding-bottom: .75rem;
+  color: #fff;
+}
+
+.AppContentIntro .content1 p {
+  margin-top: 20px;
+  line-height: 26px;
+  font-size: 16px;
+  font-weight: 400;
+  color:#fff;
+  line-height: 1.5rem;
+}
+
+.AppContentIntro {
+  display: none;
+  background-color: rgba(0, 69, 148, 0.9);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  overflow: auto;
+}
+
+.AppContentIntroPane.contracted {
+  width: auto;
+  height: auto;
+  min-height: 40px;
+}
+.AppContentIntroPane.expanded {
+  height: calc(100vh - 240px);
+}
+
+body.mobile .AppContentIntroPane {
+  width: auto;
+}
+body.mobile .AppContentIntroPane.contracted {
+  width: auto;
+}
+
+
+.AppContentResultPane {
+  position: absolute;
+  width: 400px;
+  height: calc(100% - 40px);
+  margin-top: 20px;
+  margin-right: 40px;
+  right: 0;
+  z-index: 2;
+  overflow: hidden;
+  display: none;
+}
+.AppContentResultPane .toggleResult {
+  position: absolute;
+  background: rgba(0, 0, 0, 0);
+  top: 5px;
+  right: 12px;
+  z-index: 100;
+}
+
+body.mobile .AppContentResultPane {
+  width: auto;
+  margin-left: 40px;
+}
+
+.AppContentResult {
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 69, 148, 0.9);
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.AppContentResult .title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  line-height:1.75rem;
+  padding-bottom: .75rem;
+}
+
+.AppContentResult .content table {
+  color: #fff;
+  font-size:16px;
+}
+.AppContentResult .content table tr td:first-child {
+  font-weight: bold;
+  color: #27d8c3;
+}
+.AppContentResult a {
+  color: #27d8c3;
+}
+
+section ul li {
+  line-height: 26px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.benefit img {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.benefit h3 {
+  font-size: 15px;
+  text-align: center;
+  color: #27d8c3;
+  background: #00000014;
+  line-height: 1.8em;
+  font-weight: bold;
+}
+
+.PrgOverview {
+  position: relative;
+  padding: 25px;
+  width: 100%;
+}
+.PrgOverview .content2 {
+  width: 80%;
+  position: relative;
+  margin: auto;
+}
+
+.PrgOverview .title {
+  padding-top: 30px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  line-height:2rem;
+  padding-bottom: .75rem;
+}
+.PrgOverview .subtitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height:1.75rem;
+  padding-bottom: .75rem;
+  color: #fff;
+}
+
+.PrgOverview .content2 p {
+  color:#fff;
+  font-size: 16px;
+  line-height: 1.5rem;
+  font-weight: 400;
+  position: relative;
+  margin: auto;
+  margin-bottom:30px;
+}
+
+.PrgOverview .content2 ul {
+  margin-bottom:30px;
+}
+.PrgOverview .content2 ul li {
+  color:#fff;
+  font-size: 16px;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+.PrgOverview table {
+  color:#fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+table th {
+  color: #27d8c3;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5rem;
+  
+}
+
+.PrgOverview .btn {
+  display: inline;
+  padding: 6px;
+  border-radius: 25px;
+  float: right;
+  margin-top: 0;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+
+.PrgOverview h4 {
+  color:#fff;
+  font-size:20px;
+  font-weight:600;
+  line-height:1.75rem;
+  padding-top:30px;
+  padding-bottom: .75rem;
+}
+
+.benefit h5 {
+  font-size:16px;
+  font-weight:600;
+  line-height:1.75rem;
+  padding-bottom: .75rem;
+  text-align: left;
+  color:#fff;
+}
+
+.benefit table {
+  position: relative;
+  margin: auto;
+}
+
+.budgetLabel {
+  color: #27d8c3;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+
+.LearnMoreButton {
+  font-size: 16px !important;
+  color: #27d8c3;
+  border-color: #27d8c3;
+  background-color: transparent;
+}
+.LearnMoreButton:hover {
+  background: #007bb8;
+  background: -moz-linear-gradient(left, #007bb8 0%, #27d8c3 100%);
+  background: -webkit-linear-gradient(left, #007bb8 0%, #27d8c3 100%);
+  background: linear-gradient(to right, #007bb8 0%, #27d8c3 100%);
+  border-color: #007bb8;
+  color: #fff;
+}
+
+.budgetLabel {
+  font-weight: bold;
+  color: #27d8c3;
+}
+
+.PrgOverview p a {
+  color: #27d8c3;
+  text-decoration: underline;
+}
+.PrgOverview p a:hover {
+  color: #fff;
+}
+
+
+.AppFooter {
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+.AppCopyright {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+.AppCopyright span {
+  font-size: 10px;
+}
+.AppCopyright span:last-child {
+  margin-top: 5px;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node text {
+  font-size: 14px;
+  font-family: Arial, sans-serif !important;
+}
+
+.node text[data-id="1"] {
+  font-size: 23px;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1px;
+}
+
+.node:hover text {
+  font-weight: bold;
+}
+.node:hover circle {
+  stroke: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: #27d8c3;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #003e5c;
+}
+
+.tooltipster-content {
+  color: #fff !important;
+  font-size: 0.9em;
+  font-family: Arial, sans-serif !important;
+}
+
+.AppSections nav li {
+  margin-right: 20px;
+}
+
+
+.FaqOverview {
+  position: relative;
+  padding: 25px;
+  width: 100%;
+}
+.FaqOverview .content {
+  width: 80%;
+  position: relative;
+  margin: auto;
+}
+.FaqOverview .title {
+  padding-top: 30px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  line-height:2rem;
+  padding-bottom: .75rem;
+}
+
+.FaqOverview h4 {
+  color:#27d8c3;
+  font-size:20px;
+  font-weight:600;
+  line-height:1.75rem;
+  padding-top:30px;
+  padding-bottom: .75rem;
+}
+
+.FaqOverview p {
+  color:#fff;
+  font-size: 16px;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+.FaqOverview p a {
+  color: #27d8c3;
+  text-decoration:underline;
+}
+.FaqOverview p a:hover {
+  color: #fff;
+  text-decoration:underline;
+}
+
+
+/*
+@media only screen and (max-width: 540px) {
+  nav.navbar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+*/
+
